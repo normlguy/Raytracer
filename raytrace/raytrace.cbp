@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="raytrace" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="raytrace" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug Win32" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add option="-g" />
+					<Add option="-O0" />
+				</Compiler>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="raytrace" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release Win32" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-W" />
+					<Add option="-O2" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="Debug.cpp" />
+		<Unit filename="Engine.cpp" />
+		<Unit filename="Run.cpp" />
+		<Unit filename="Scene.cpp" />
+		<Unit filename="Surface.cpp" />
+		<Unit filename="Plane.cpp" />
+		<Unit filename="Sphere.cpp" />
+		<Unit filename="Color.h" />
+		<Unit filename="Debug.h" />
+		<Unit filename="def.h" />
+		<Unit filename="Engine.h" />
+		<Unit filename="Material.h" />
+		<Unit filename="Ray.h" />
+		<Unit filename="Scene.h" />
+		<Unit filename="Surface.h" />
+		<Unit filename="Vec3.h" />
+		<Unit filename="Plane.h" />
+		<Unit filename="Primitive.h" />
+		<Unit filename="Sphere.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

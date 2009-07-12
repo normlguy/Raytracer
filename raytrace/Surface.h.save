@@ -1,0 +1,28 @@
+#ifndef _INC_SURFACE_H_
+#define _INC_SURFACE_H_
+
+#include "Color.h"
+#include <Image.hpp>
+
+typedef unsigned int Pixel;
+
+class Surface
+{
+public:
+	Surface( int width_, int height_ );
+	~Surface() { delete[] buffer; }
+
+	Pixel* getBuffer();
+	int getWidth();
+	int getHeight();
+	Pixel& getPixel( int x, int y );
+	void setPixel( int x, int y, Color& col );
+	void clear( Pixel color );
+
+private:
+	Pixel* buffer;
+	int width, height;
+
+};
+
+#endif // _INC_SURFACE_H_
