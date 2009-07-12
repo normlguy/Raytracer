@@ -1,2 +1,5 @@
 This is a raytracer that has been built from scratch by me over a weekend. It is still very basic,
 but I hope to add more advanced features eventually. If only there were more hours in the day...
+
+The raytracer is currently in an UNUSABLE state. It is being transitioned from a windows-only program, to using SFML for better
+portability.
