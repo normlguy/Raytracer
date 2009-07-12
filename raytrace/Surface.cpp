@@ -4,11 +4,13 @@ Surface::Surface( int width_, int height_ ) : width( width_ ),
                                               height( height_ )
 {
     buffer = new sf::Image( width_, height_ );
+    sprite = new sf::Sprite( *buffer );
 }
 
 Surface::~Surface()
 {
-    delete[] buffer;
+    delete buffer;
+    delete sprite;
 }
 
 void Surface::setPixel( int x, int y, Color& col )
@@ -59,5 +61,10 @@ int Surface::getWidth()
 const Pixel* Surface::getBuffer()
 {
     return buffer->GetPixelsPtr();
+}
+
+const sf::Drawable& Surface::getDrawable()
+{
+    return *sprite;
 }
 

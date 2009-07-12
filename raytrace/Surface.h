@@ -2,8 +2,7 @@
 #define _INC_SURFACE_H_
 
 #include "Color.h"
-#include <SFML/Graphics/Image.hpp>
-#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics.hpp>
 
 typedef sf::Uint8 Pixel;
 
@@ -19,9 +18,11 @@ public:
 	const sf::Color getPixel( int x, int y );
 	void setPixel( int x, int y, Color& col );
 	void clear( sf::Color color );
+	const sf::Drawable& getDrawable();
 
 private:
 	sf::Image* buffer;
+    sf::Sprite* sprite;
 	int width, height;
 
 };

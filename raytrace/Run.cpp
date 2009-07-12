@@ -1,14 +1,64 @@
 //#include <windows.h>
 #include <iostream>
+#include <unistd.h>
+
+#include <SFML/Graphics.hpp>
 
 #include "def.h"
 #include "Surface.h"
 #include "Engine.h"
 #include "Debug.h"
 
+static sf::RenderWindow app( sf::VideoMode( SCRW, SCRH ), WINDOW_TITLE );
+
+Engine* eng = 0;
+
+void handleEvents();
+
 int main( int argc, char** argv )
 {
+    /*eng = new Engine();
+
+    eng->getSurface()->clear( sf::Color::Black );
+
+    app.Display();
+
+    //eng->render( handleEvents );
+
+    while( app.IsOpened() )
+    {
+        //app.Draw( eng->getSurface()->getDrawable() );
+        //app.Display();
+
+        handleEvents();
+
+        sleep( 0 );
+    }*/
+
+    std::cout << "TEST" << std::endl;
+
     return EXIT_SUCCESS;
+}
+
+void handleEvents()
+{
+    std::cout << "in handle Events" << std::endl;
+
+    sf::Event evt;
+
+    while( app.GetEvent( evt )  )
+    {
+        switch( evt.Type )
+        {
+            case sf::Event::Closed:
+                app.Close();
+                break;
+        }
+    }
+
+    app.Draw( eng->getSurface()->getDrawable() );
+
+    sleep( 0 );
 }
 
 /*static WNDCLASS wclass;
