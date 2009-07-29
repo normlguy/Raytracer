@@ -86,7 +86,7 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
     if ( prim->isLight() )
     {
         // hit a light.
-        col = Color( 1, 1, 1 );
+        col = prim->getColor();
         return;
     }
 

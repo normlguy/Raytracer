@@ -14,7 +14,7 @@ public:
 	Color() : r( 0 ), g( 0 ), b( 0 ) {};
 	Color( const Color& col ) : r( col.getRed() ), g( col.getGreen() ), b( col.getBlue() ) {}
 	//Color( int r_, int b_, int g_ ) : r( r_ ), g( g_ ), b( b_ ) {}
-    Color( float r_, float b_, float g_ ) : r( r_ ), g( g_  ), b( b_ ) {}
+    Color( float r_, float g_, float b_ ) : r( r_ ), g( g_ ), b( b_ ) {}
 
 	float getRed() const { return r; }
 	float getGreen() const { return g; }
