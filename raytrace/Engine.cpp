@@ -29,6 +29,7 @@ Engine::Engine( Surface& surface, Scene& scene_ ) : result( &surface ),	scene( &
 void Engine::init()
 {
     cur_y = 0;
+    finished = false;
     scene->build();
 }
 
@@ -268,6 +269,7 @@ bool Engine::render( void ( *msgFunc )() )
     }
 
     // done!
+    this->setFinished( true );
     return true;
 }
 

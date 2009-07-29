@@ -17,25 +17,21 @@ void handleEvents();
 
 int main( int argc, char** argv )
 {
-    /*eng = new Engine();
+    eng = new Engine();
 
     eng->getSurface()->clear( sf::Color::Black );
 
     app.Display();
 
-    //eng->render( handleEvents );
+    eng->render( handleEvents );
 
     while( app.IsOpened() )
     {
-        //app.Draw( eng->getSurface()->getDrawable() );
-        //app.Display();
-
         handleEvents();
+        usleep( WINDOW_UPDATE_DELAY * 1000 );
+    }
 
-        sleep( 0 );
-    }*/
-
-    std::cout << "TEST" << std::endl;
+    //std::cout << "TEST" << std::endl;
 
     return EXIT_SUCCESS;
 }
@@ -58,7 +54,7 @@ void handleEvents()
 
     app.Draw( eng->getSurface()->getDrawable() );
 
-    sleep( 0 );
+    app.Display();
 }
 
 /*static WNDCLASS wclass;

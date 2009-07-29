@@ -21,7 +21,7 @@
 #define CAM_Z -5
 
 #define WINDOW_TITLE "raytracer"
-#define WINDOW_UPDATE_DELAY 50
+#define WINDOW_UPDATE_DELAY 25
 
 #define MAX_RAY_DEPTH 6
 #define EPSILON 0.0001f

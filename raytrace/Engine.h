@@ -20,6 +20,7 @@ public:
 	Scene* getScene() { return scene; }
 
 	bool render( void (*msgFunc)() );
+	bool isFinished() { return finished; }
 
 protected:
 	Primitive* raytrace( Ray& r, Color& col, int depth, float& dist );
@@ -33,6 +34,7 @@ private:
 	void handleLighting( Primitive* prim, Ray& r, Color& col, const float dist, const int depth );
 	void handleReflection( Primitive* prim, Ray& r, Vec3 intersection, Color& col, const int depth );
 	void handleShade( Primitive* light, Vec3 light_pos, Vec3 intersect, float& shade );
+	void setFinished( bool nFinished ) { finished = nFinished; }
 
 
 
@@ -42,7 +44,7 @@ private:
 
 	int cur_y, cur_x;
 	float delt_x, delt_y;
-	
+
 	typedef struct
 	{
 		float x, y;
@@ -50,6 +52,7 @@ private:
 
 	WorldUnits pixel_pos;
 	const Vec3 view_wnd_c0, view_wnd_c1, cam_pos;
+	bool finished;
 
 };
 
