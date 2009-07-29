@@ -21,12 +21,12 @@
 #define CAM_Z -5
 
 #define WINDOW_TITLE "raytracer"
-#define WINDOW_UPDATE_DELAY 25
+#define WINDOW_UPDATE_DELAY 0
 
 #define MAX_RAY_DEPTH 6
 #define EPSILON 0.0001f
 
-#define RENDER_TILE_SIZE 32
+#define RENDER_TILE_SIZE 8
 
 #define CLAMP( x, min, max )	(x < min) ? x = min : ( (x > max) ? x = max :  );
 #define __RGB( r, g, b )			int( r * 256 ), int( g * 256 ), int( b * 256 )

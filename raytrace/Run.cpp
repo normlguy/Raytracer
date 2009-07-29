@@ -38,7 +38,7 @@ int main( int argc, char** argv )
 
 void handleEvents()
 {
-    std::cout << "in handle Events" << std::endl;
+    //std::cout << "in handle Events" << std::endl;
 
     sf::Event evt;
 
