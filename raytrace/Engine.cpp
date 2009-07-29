@@ -138,7 +138,7 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
             }
 
             // now specular shading
-            if ( ENABLE_SPEC_LIGHTING && prim->getSpecular() > 0 )
+            if ( ENABLE_SPEC_LIGHTING && prim->getSpecular() > 0 && prim->getType() != Primitive::PLANE )
             {
                 Vec3 refl_vec = light_pos_norm - ( norm * light_pos_norm.dot( norm ) * 2.0f );
 
