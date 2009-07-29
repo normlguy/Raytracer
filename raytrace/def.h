@@ -28,6 +28,11 @@
 
 #define RENDER_TILE_SIZE 8
 
+#define ENABLE_SPEC_LIGHTING 0
+#define ENABLE_REFLECTIONS 1
+#define ENABLE_DIFFUSE_LIGHTING 1
+#define ENABLE_HARD_SHADOWS 1
+
 #define CLAMP( x, min, max )	(x < min) ? x = min : ( (x > max) ? x = max :  );
 #define __RGB( r, g, b )			int( r * 256 ), int( g * 256 ), int( b * 256 )
 #define DOT(A,B)		( A["x"] * B["x"]+ A["y"] * B["y"] + A["z"] * B["z"] )

@@ -119,7 +119,7 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
             Vec3 norm = prim->getNormal( intrsect );
 
             // calculate diffuse shading
-            if ( prim->getDiffusion() > 0 )
+            if ( ENABLE_DIFFUSE_LIGHTING && prim->getDiffusion() > 0 )
             {
                 // get a number of how "similar" the vector that is the normal at the intersection point
                 // is to the vector that is from the intersection point to the center of the light
@@ -138,7 +138,7 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
             }
 
             // now specular shading
-            if ( prim->getSpecular() > 0 )
+            if ( ENABLE_SPEC_LIGHTING && prim->getSpecular() > 0 )
             {
                 Vec3 refl_vec = light_pos_norm - ( norm * light_pos_norm.dot( norm ) * 2.0f );
 
@@ -160,6 +160,8 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
 
 void Engine::handleReflection( Primitive* prim, Ray& r, Vec3 intersection, Color& col, const int depth )
 {
+    if( !ENABLE_REFLECTIONS ) return;
+
     // now calculate reflection rays
     float refl = prim->getReflectivity();
     if ( refl > 0.0f )
@@ -181,6 +183,8 @@ void Engine::handleReflection( Primitive* prim, Ray& r, Vec3 intersection, Color
 
 void Engine::handleShade( Primitive* light, Vec3 light_pos, Vec3 intersect, float& shade )
 {
+    if( !ENABLE_HARD_SHADOWS ) return;
+
     if ( light->getType() == Primitive::SPHERE )
     {
         Vec3 light_pos_norm = light_pos.normalize();
