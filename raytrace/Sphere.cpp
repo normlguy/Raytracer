@@ -6,6 +6,8 @@
 
 int Sphere::intersect( Ray& r, float& dist )
 {
+    if( this->isLight() ) return MISS;
+
 	Vec3 v = r.getOrigin() - center;
 
 	float b = -v.dot( r.getDirection() );

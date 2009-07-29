@@ -33,6 +33,8 @@ int main( int argc, char** argv )
 
     //std::cout << "TEST" << std::endl;
 
+    delete eng;
+
     return EXIT_SUCCESS;
 }
 
