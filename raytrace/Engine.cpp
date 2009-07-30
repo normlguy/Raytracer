@@ -185,7 +185,7 @@ void Engine::handleShade( Primitive* light, Vec3 light_pos, Vec3 intersect, floa
 {
     if( !ENABLE_HARD_SHADOWS ) return;
 
-    if ( light->getType() == Primitive::SPHERE )
+    //if ( light->getType() == Primitive::SPHERE )
     {
         Vec3 light_pos_norm = light_pos.normalize();
         float tdist = light_pos.length();

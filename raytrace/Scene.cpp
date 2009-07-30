@@ -48,20 +48,21 @@ void Scene::build()
 	addPrim( p );
 
 	// light source 1
-	//p = new Sphere( Vec3( -7, 5, 7 ), 0.1f );
-	//m = new Material( Color( 1.0f, 1.0f, 1.0f ) );
-	//p->setLight( true );
-	//p->setName( "light 1" );
-	//p->setMaterial( m );
-	//addPrim( p );
+	p = new Sphere( Vec3( 30, 5, 10 ), 0.1f ); // y, up down, x left right, z forward back
+	m = new Material( Color( 1.0f, 1.0f, 1.0f ) );
+	p->setLight( true );
+	p->setName( "light 1" );
+	p->setMaterial( m );
+	addPrim( p );
 
+    /* additional lights
 	//light source 2
-	//p = new Sphere( Vec3( 0, 5, 8 ), 0.1f );
-	//m = new Material( Color( 0.0f, 0.0f, 1.0f ) );
-	//p->setLight( true );
-	//p->setName( "light 2" );
-	//p->setMaterial( m );
-	//addPrim( p );
+	p = new Sphere( Vec3( 10, 5, 25 ), 0.1f );
+	m = new Material( Color( 1.0f, 0.5f, 1.0f ) );
+	p->setLight( true );
+	p->setName( "light 2" );
+	p->setMaterial( m );
+	addPrim( p );
 
 	//light source 3
 	p = new Sphere( Vec3( -2, 7, 3 ), 0.1f );
@@ -70,6 +71,7 @@ void Scene::build()
 	p->setName( "light 2" );
 	p->setMaterial( m );
 	addPrim( p );
+	*/
 
 	// back plane
 	p = new Plane( Vec3( 0.6f, 0, -1 ), 24 );

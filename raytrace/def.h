@@ -18,7 +18,7 @@
 
 #define CAM_X 0
 #define CAM_Y 0
-#define CAM_Z -5
+#define CAM_Z -1
 
 #define WINDOW_TITLE "raytracer"
 #define WINDOW_UPDATE_DELAY 0
