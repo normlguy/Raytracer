@@ -13,21 +13,9 @@ Surface::~Surface()
     delete sprite;
 }
 
-void Surface::setPixel( int x, int y, Color& col )
+void Surface::setPixel( int x, int y, sf::Color& col )
 {
-	int r = int( col.getRed() * 255 );
-	int g = int( col.getGreen() * 255 );
-	int b = int( col.getBlue() * 255 );
-
-	if( r < 0 ) r = 0;
-	if( g < 0 ) g = 0;
-	if( b < 0 ) b = 0;
-
-	if( r > 255 ) r = 255;
-	if( g > 255 ) g = 255;
-	if( b > 255 ) b = 255;
-
-	buffer->SetPixel( x, y, sf::Color::Color( r, g, b ) );
+	buffer->SetPixel( x, y, col );
 }
 
 void Surface::clear( sf::Color color )

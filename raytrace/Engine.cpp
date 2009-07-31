@@ -81,7 +81,7 @@ void Engine::checkIntersect( Ray& r, float& dist, Primitive** prim, int& result 
     }
 }
 
-void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float dist, const int depth )
+void Engine::handleLighting( Primitive* prim, Ray& r, sf::Color& col, const float dist, const int depth )
 {
     if ( prim->isLight() )
     {
@@ -133,7 +133,12 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
                     float diff = dot * prim->getDiffusion() * shade;
 
                     // add the light color to the color of the ray
-                    col += diff * prim->getColor() * light->getColor();
+                    sf::Color prim_col = prim->getColor();
+                    sf::Color light_col = light->getColor();
+
+                    prim_col *= light_col;
+
+                    col += sf::Color( diff * prim_col.r, diff * prim_col.g, diff * prim_col.b, 255 );
                 }
             }
 
@@ -148,7 +153,8 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
                 {
                     float spec = powf( dot, 20 ) * prim->getSpecular() * shade;
 
-                    col += spec * light->getColor();
+                    sf::Color light_col = light->getColor();
+                    col += sf::Color( spec * light_col.r, spec * light_col.g, spec * light_col.b, 255 );
                 }
             }
         }
@@ -158,7 +164,7 @@ void Engine::handleLighting( Primitive* prim, Ray& r, Color& col, const float di
     handleReflection( prim, r, intrsect, col, depth );
 }
 
-void Engine::handleReflection( Primitive* prim, Ray& r, Vec3 intersection, Color& col, const int depth )
+void Engine::handleReflection( Primitive* prim, Ray& r, Vec3 intersection, sf::Color& col, const int depth )
 {
     if( !ENABLE_REFLECTIONS ) return;
 
@@ -171,12 +177,13 @@ void Engine::handleReflection( Primitive* prim, Ray& r, Vec3 intersection, Color
 
         if ( depth < MAX_RAY_DEPTH )
         {
-            Color nCol( 0, 0, 0 );
+            sf::Color nCol( 0, 0, 0, 255 );
             float ndist;
             Vec3 newVec = intersection + refl_vec * EPSILON;
             Ray newRay = Ray( newVec, refl_vec );
             raytrace( newRay, nCol, depth + 1, ndist );
-            col += refl * nCol * prim->getColor();
+            nCol *= prim->getColor();
+            col += sf::Color( refl * nCol.r, refl * nCol.g, refl * nCol.b, 255 );
         }
     }
 }
@@ -244,7 +251,7 @@ bool Engine::render( void ( *msgFunc )() )
                 {
                     //x = 0;
                     //y = SCRH_LIM - 10;
-                    Color col = Color( 0, 0, 0 );
+                    sf::Color col( 0, 0, 0, 255 );
 
                     // direction from camera to pixel
                     Vec3 dir = getPixelPos( x, y );
@@ -277,7 +284,7 @@ bool Engine::render( void ( *msgFunc )() )
     return true;
 }
 
-Primitive* Engine::raytrace( Ray& r, Color& col, int depth, float& dist )
+Primitive* Engine::raytrace( Ray& r, sf::Color& col, int depth, float& dist )
 {
     //TRACE( "x: %i, y:%i\n", x, y );
     // bouncing too much? bail

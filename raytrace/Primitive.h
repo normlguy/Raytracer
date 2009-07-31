@@ -7,13 +7,16 @@
 #include "Ray.h"
 #include "Material.h"
 
-typedef const unsigned int PrimType;
+
 
 class Primitive
 {
 public:
-	static PrimType SPHERE = 0;
-	static PrimType PLANE = 1;
+    enum PrimType
+    {
+        SPHERE,
+        PLANE
+    };
 
 	//ctor
 	Primitive() : light( false ) {}
@@ -31,7 +34,7 @@ public:
 	virtual Primitive* setReflectivity( float ref ) { if( !mat ) return NULL; mat->setReflectivity( ref ); return this; }
 	virtual Primitive* setDiffusion( float diff ) { if( !mat ) return NULL; mat->setDiffusion( diff ); return this; }
 
-	virtual Color& getColor() { return mat->getColor(); }
+	virtual sf::Color& getColor() { return mat->getColor(); }
 	virtual float getDiffusion() { return mat->getDiffusion(); }
 	virtual float getReflectivity() { return mat->getReflectivity(); }
 	virtual float getSpecular() { return mat->getSpecular(); }

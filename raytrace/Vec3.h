@@ -12,7 +12,7 @@ public:
 	Vec3() : x( 0.0f ), y( 0.0f ), z( 0.0f ) {};
 	Vec3( float x, float y, float z ) : x( x ), y( y ), z( z ) {};
 	Vec3( const Vec3& t ) : x( t.x ), y( t.y ), z( t.z ) {};
-	
+
 	float length() { return (float) sqrtf( x * x + y * y + z * z ); }
 	float dot( Vec3& that ) { return x * that.x + y * that.y + z * that.z; }
 	Vec3 cross( Vec3& that ) { return Vec3( y * that.z - z * that.y, z * that.x - x * that.z, x * that.y - y * that.x ); }
@@ -20,8 +20,8 @@ public:
 
 	void			operator =( const Vec3& rhs ) {}
 	Vec3			operator -() const { return Vec3( -x, -y, -z ); }
-	const float		operator []( const int idx ) const { switch( idx ) { case 0: return x; case 1: return y; case 2: return z; default: return NULL; } }
-	const float		operator []( const char* idx ) const { if( idx == "x" ){ return x; } if( idx == "y" ){ return y; } if( idx == "z" ){ return z; } return NULL; }
+	float		operator []( const int idx ) const { switch( idx ) { case 0: return x; case 1: return y; case 2: return z; default: return NULL; } }
+	float		operator []( const char* idx ) const { if( idx == "x" ){ return x; } if( idx == "y" ){ return y; } if( idx == "z" ){ return z; } return NULL; }
 
 	friend Vec3 operator + ( const Vec3& first, const Vec3& second ) { return Vec3( first.x + second.x, first.y + second.y, first.z + second.z ); }
 	friend Vec3 operator - ( const Vec3& first, const Vec3& second ) { return Vec3( first.x - second.x, first.y - second.y, first.z - second.z ); }

@@ -16,7 +16,7 @@ public:
 	int getWidth();
 	int getHeight();
 	const sf::Color getPixel( int x, int y );
-	void setPixel( int x, int y, Color& col );
+	void setPixel( int x, int y, sf::Color& col );
 	void clear( sf::Color color );
 	const sf::Drawable& getDrawable();
 

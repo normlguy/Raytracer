@@ -23,7 +23,7 @@ public:
 	bool isFinished() { return finished; }
 
 protected:
-	Primitive* raytrace( Ray& r, Color& col, int depth, float& dist );
+	Primitive* raytrace( Ray& r, sf::Color& col, int depth, float& dist );
 
 private:
 	void init();
@@ -31,8 +31,8 @@ private:
 	Vec3 getPixelPos( int x, int y );
 	void handleMsgFunc( void (*msgFunc)(), int start );
 	void checkIntersect( Ray& r, float& dist, Primitive** prim, int& result );
-	void handleLighting( Primitive* prim, Ray& r, Color& col, const float dist, const int depth );
-	void handleReflection( Primitive* prim, Ray& r, Vec3 intersection, Color& col, const int depth );
+	void handleLighting( Primitive* prim, Ray& r, sf::Color& col, const float dist, const int depth );
+	void handleReflection( Primitive* prim, Ray& r, Vec3 intersection, sf::Color& col, const int depth );
 	void handleShade( Primitive* light, Vec3 light_pos, Vec3 intersect, float& shade );
 	void setFinished( bool nFinished ) { finished = nFinished; }
 
