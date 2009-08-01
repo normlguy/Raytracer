@@ -16,9 +16,9 @@ public:
 	//Material( Color col_, float diff_ ) : col( sf::Color( col_.getRed() * 255, col_.getGreen() * 255, col_.getBlue() * 255, 255 ) ), diff( diff_ ) {};
 	//Material( Color col_, float diff_, float refl_ ) : col( sf::Color( col_.getRed() * 255, col_.getGreen() * 255, col_.getBlue() * 255, 255 ) ), diff( diff_ ), refl( refl_ ) {};
 
-    Material( sf::Color& col_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ) {};
-	Material( sf::Color& col_, float diff_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ), diff( diff_ ) {};
-	Material( sf::Color& col_, float diff_, float refl_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ), diff( diff_ ), refl( refl_ ) {};
+    //Material( sf::Color& col_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ) {};
+	//Material( sf::Color& col_, float diff_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ), diff( diff_ ) {};
+	//Material( sf::Color& col_, float diff_, float refl_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ), diff( diff_ ), refl( refl_ ) {};
 
 	Material( sf::Color col_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ) {};
 	Material( sf::Color col_, float diff_ ) : col( sf::Color( col_.r, col_.g, col_.b, 255 ) ), diff( diff_ ) {};

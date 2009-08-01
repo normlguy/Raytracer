@@ -3,7 +3,6 @@
 
 #include "Primitive.h"
 #include "def.h"
-#include "PrimitiveFactory.h"
 
 class Scene
 {
@@ -21,5 +20,7 @@ private:
 	Primitive** prims;
 
 };
+
+#include "PrimitiveFactory.h"
 
 #endif // _INC_SCENE_H_

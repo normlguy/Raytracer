@@ -8,7 +8,7 @@
 class Plane : public Primitive
 {
 public:
-	Plane( Vec3& normal_, float D_ ) : normal( normal_ ), D( D_ ) {};
+	//Plane( Vec3& normal_, float D_ ) : normal( normal_ ), D( D_ ) {};
 	Plane( Vec3 normal_, float D_ ) : normal( normal_ ), D( D_ ) {};
 	~Plane() {};
 

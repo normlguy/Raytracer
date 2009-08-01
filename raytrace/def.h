@@ -26,7 +26,7 @@
 #define MAX_RAY_DEPTH 6
 #define EPSILON 0.0001f
 
-#define RENDER_TILE_SIZE 8
+#define RENDER_TILE_SIZE 16
 
 #define ENABLE_SPEC_LIGHTING 1
 #define ENABLE_REFLECTIONS 1
@@ -34,7 +34,7 @@
 #define ENABLE_HARD_SHADOWS 1
 
 #define CLAMP( x, min, max )	(x < min) ? x = min : ( (x > max) ? x = max :  );
-#define __RGB( r, g, b )			int( r * 256 ), int( g * 256 ), int( b * 256 )
+#define __RGB( r, g, b )			int( r * 255 ), int( g * 255 ), int( b * 255 )
 #define DOT(A,B)		( A["x"] * B["x"]+ A["y"] * B["y"] + A["z"] * B["z"] )
 #define NORMALIZE(A)	{ float l = 1 / sqrtf( A["x"] * A["x"] + A["y"] * A["y"] + A["z"] * A["z"] ); A["x"] *= l; A["y"] *= l; A["z"] *= l; }
 #define LENGTH(A)		( sqrtf( A["x"] * A["x"] + A["y"] * A["y"] + A["z"] * A["z"] ) )

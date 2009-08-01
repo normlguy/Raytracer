@@ -28,7 +28,7 @@ int main( int argc, char** argv )
     while( app.IsOpened() )
     {
         handleEvents();
-        usleep( WINDOW_UPDATE_DELAY * 1000 );
+        //usleep( WINDOW_UPDATE_DELAY * 1000 );
     }
 
     //std::cout << "TEST" << std::endl;

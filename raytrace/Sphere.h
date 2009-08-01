@@ -8,9 +8,9 @@
 class Sphere : public Primitive
 {
 public:
-	Sphere( Vec3& center_, float radius_ ) :
-		center( center_ ), radius( radius_ ),
-		sq_radius( radius_ * radius_ ), recip_radius( 1.0f / radius_ ) {};
+	//Sphere( Vec3& center_, float radius_ ) :
+	//	center( center_ ), radius( radius_ ),
+	//	sq_radius( radius_ * radius_ ), recip_radius( 1.0f / radius_ ) {};
     Sphere( Vec3 center_, float radius_ ) :
 		center( center_ ), radius( radius_ ),
 		sq_radius( radius_ * radius_ ), recip_radius( 1.0f / radius_ ) {};
