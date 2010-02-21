@@ -1,3 +1,5 @@
+#include <string>
+
 #include "Scene.h"
 #include "def.h"
 #include "PrimitiveFactory.h"
